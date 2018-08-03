@@ -3,6 +3,10 @@ public class CalculatorRunner {
 		Calculator c = new Calculator();
 		System.out.println(c.add(1, 2));
 		GetLatestTweet g = new GetLatestTweet();
+		PigLatin p = new PigLatin();
+		p.m();
+		WhackAMole wam = new WhackAMole();
+		wam.m();
 
 	}
 

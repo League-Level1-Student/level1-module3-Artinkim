@@ -6,8 +6,9 @@ public class CalculatorRunner {
 		PigLatin p = new PigLatin();
 		p.m();
 		WhackAMole wam = new WhackAMole();
-		wam.m();
-
+		wam.makeb();
+		SlotMachine s = new SlotMachine();
+		s.m();
 	}
 
 }

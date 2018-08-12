@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements MouseListener {
@@ -31,14 +32,18 @@ public class SlotMachine implements MouseListener {
 	}
 
 	void m() {
-	p.removeAll();
-	p.add(b);
+		int s = 0;
+		int ss = 0;
+		int sss = 0;
+		p.removeAll();
+		p.add(b);
 		Random rand = new Random();
 		for (int r = 0; r < 3; r++) {
 			int num = rand.nextInt(3);
 			if (num == 0) {
 				try {
 					L = createLabelImage(i);
+					s++;
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -47,6 +52,7 @@ public class SlotMachine implements MouseListener {
 			if (num == 1) {
 				try {
 					L = createLabelImage(ii);
+					ss++;
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -55,6 +61,7 @@ public class SlotMachine implements MouseListener {
 			if (num == 2) {
 				try {
 					L = createLabelImage(iii);
+					sss++;
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -62,8 +69,18 @@ public class SlotMachine implements MouseListener {
 			}
 			p.add(L);
 			f.pack();
+
+			if (s == 3) {
+				JOptionPane.showMessageDialog(null, "YOU WON!!!");
+			}
+			if (ss == 3) {
+				JOptionPane.showMessageDialog(null, "YOU WON!!!");
+			}
+			if (sss == 3) {
+				JOptionPane.showMessageDialog(null, "YOU WON!!!");
+			}
 		}
-		
+
 	}
 
 	private JLabel createLabelImage(String fileName) throws MalformedURLException {
